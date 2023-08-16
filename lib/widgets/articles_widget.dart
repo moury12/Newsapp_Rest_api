@@ -4,10 +4,10 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/Model/bookmarks_model.dart';
 import 'package:news_app/Model/newsModel.dart';
-import 'package:news_app/Screens/newsDetails.dart';
+import 'package:news_app/pages/newsDetails.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
-import '../Screens/news_details_webview.dart';
+import '../pages/news_details_webview.dart';
 import '../const/utils.dart';
 
 class ArticlesWidget extends StatelessWidget {

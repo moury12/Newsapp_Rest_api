@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/Controllers/dark_theme_provider.dart';
-import 'package:news_app/Screens/bookmarks_screen.dart';
-import 'package:news_app/Screens/home_screen.dart';
+import 'package:news_app/pages/bookmarks_screen.dart';
+import 'package:news_app/pages/home_screen.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
-import '../Screens/search_screen.dart';
+import '../pages/search_screen.dart';
 class DrawerWidget extends StatefulWidget {
   const DrawerWidget({Key? key}) : super(key: key);
 
