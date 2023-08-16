@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/Controllers/News_provider.dart';
+import 'package:news_app/Controllers/bookmarkProvider.dart';
 import 'package:news_app/Controllers/dark_theme_provider.dart';
 import 'package:news_app/Screens/home_screen.dart';
 import 'package:news_app/const/theme_data.dart';
@@ -22,7 +23,7 @@ class _MyAppState extends State<MyApp> {
 DarkThemeProvider themeProvider =DarkThemeProvider();
 
 void getCurrentAppTheme() async{
-  themeProvider.setDarkTheme=await themeProvider.darkThemePrefs.getDarkTheme()??true;
+  themeProvider.setDarkTheme = await themeProvider.darkThemePrefs.getDarkTheme() ?? false;
 }
 @override
   void initState() {
@@ -38,7 +39,11 @@ getCurrentAppTheme();
         create: (_) => themeProvider,
       ),ChangeNotifierProvider<NewsProvider>(
         create: (_) =>NewsProvider() ,
-      ),],
+      ),
+        ChangeNotifierProvider<BookmarkProvider>(
+        create: (_) =>BookmarkProvider() ,
+      ),
+      ],
       child: Consumer<DarkThemeProvider>(
         builder: (context,provider,child) {
           return MaterialApp(
@@ -47,7 +52,7 @@ getCurrentAppTheme();
             theme: Styles.themeData(provider.getDarktheme,context),
             home: HomeScreen(),
             routes: {
-              NewsDetailsScreen.routeName: (ctx) => const NewsDetailsScreen(),
+              NewsDetailsScreen.routeName: (ctx) =>  NewsDetailsScreen(),
 
             },
           );

@@ -3,6 +3,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/Controllers/dark_theme_provider.dart';
 import 'package:news_app/Screens/bookmarks_screen.dart';
+import 'package:news_app/Screens/home_screen.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
@@ -39,12 +40,19 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               ],
             ),
 
-            ),  ListTile(leading: Icon(IconlyLight.home),title: Text('Home',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),),
+            ),  ListTile(leading: Icon(IconlyLight.home),title: Text('Home',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),
+            ),onTap: () {
+             Navigator.pushReplacement(context,  PageTransition(child:HomeScreen() ,ctx: context,
+               type: PageTransitionType.rightToLeft ,
+               //inheritTheme: true
+             ));
+            },
             ),ListTile(onTap: () {
               Navigator.push(context, PageTransition(child:BookmarkScreen() ,ctx: context,
                 type: PageTransitionType.rightToLeft ,
                 //inheritTheme: true
-              ));
+              )
+              );
             },
               leading: Icon(IconlyLight.bookmark),title: Text('Bookmarks',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),),
             ),

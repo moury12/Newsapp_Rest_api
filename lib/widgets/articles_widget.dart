@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:news_app/Model/bookmarks_model.dart';
 import 'package:news_app/Model/newsModel.dart';
 import 'package:news_app/Screens/newsDetails.dart';
 import 'package:page_transition/page_transition.dart';
@@ -10,15 +11,16 @@ import '../Screens/news_details_webview.dart';
 import '../const/utils.dart';
 
 class ArticlesWidget extends StatelessWidget {
-  const ArticlesWidget({Key? key, }) : super(key: key);
+  const ArticlesWidget({Key? key,  this.bookmared=false }) : super(key: key);
+ final bool bookmared;
   @override
   Widget build(BuildContext context) {
-    final newsProvider = Provider.of<NewsModel>(context,listen: false);
+    dynamic newsProvider =bookmared==true? Provider.of<BookmarksModel>(context) :Provider.of<NewsModel>(context);
     Size size = Utils(context).getScreenSize;
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Material(
-        color: Theme.of(context).cardColor,
+      child: Material(borderRadius: BorderRadius.circular(20),
+        color: Theme.of(context).canvasColor,
         child: InkWell(
           onTap: () {
             Navigator.pushNamed(context, NewsDetailsScreen.routeName,arguments: newsProvider.publishAt);
@@ -40,20 +42,22 @@ class ArticlesWidget extends StatelessWidget {
                 ),
               ),
               Container(
-                color: Theme.of(context).cardColor,
-                padding: const EdgeInsets.all(10.0),
+                color: Theme.of(context).canvasColor,
+                //padding: const EdgeInsets.all(5.0),
                 margin: const EdgeInsets.all(5.0),
                 child: Row(
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(10),
-                      child: FancyShimmerImage(
-                          height: size.height * 0.12,
-                          width: size.height * 0.12,
-                          boxFit: BoxFit.fill,
-                          imageUrl:newsProvider.urlToImage,
-                             
-                      errorWidget:Icon(IconlyBold.image ,size: 70,)
+                      child: Hero(tag: newsProvider.publishAt,
+                        child: FancyShimmerImage(
+                            height: size.height * 0.19,
+                            width: size.height * 0.19,
+                            boxFit: BoxFit.fill,
+                            imageUrl:newsProvider.urlToImage,
+
+                        errorWidget:Icon(IconlyBold.image ,size: 70,)
+                        ),
                       ),
                     ), Expanded(
                       child: Column(

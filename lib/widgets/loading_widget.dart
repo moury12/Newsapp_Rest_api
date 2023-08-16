@@ -161,7 +161,7 @@ class ArticlesShimmerEffectWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Material(
-        color: Theme.of(context).cardColor,
+        color: Theme.of(context).canvasColor,
         child: Stack(
           children: [
             Container(
@@ -179,9 +179,9 @@ class ArticlesShimmerEffectWidget extends StatelessWidget {
               ),
             ),
             Container(
-              color: Theme.of(context).cardColor,
-              padding: const EdgeInsets.all(10.0),
-              margin: const EdgeInsets.all(10.0),
+              color: Theme.of(context).canvasColor,
+              padding: const EdgeInsets.all(5.0),
+              margin: const EdgeInsets.all(5.0),
               child: Shimmer.fromColors(
                 baseColor: baseShimmerColor,
                 highlightColor: highlightShimmerColor,
@@ -191,8 +191,8 @@ class ArticlesShimmerEffectWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                       child: Container(
                         color: widgetShimmerColor,
-                        height: size.height * 0.12,
-                        width: size.height * 0.12,
+                        height: size.height * 0.19,
+                        width: size.height * 0.19,
                       ),
                     ),
                     const SizedBox(

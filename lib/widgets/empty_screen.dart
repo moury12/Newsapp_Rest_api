@@ -15,13 +15,12 @@ class EmptyNewsWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
+        mainAxisSize: MainAxisSize.min,
         children: [
           Padding(
             padding: const EdgeInsets.all(18.0),
-            child: Image.network(
-              'https://webnotics.solutions/wp-content/uploads/2022/06/404-errors.jpg',
-
+            child: Image.asset(
+'assets/e.png'
             ),
           ),
           Flexible(

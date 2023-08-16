@@ -10,8 +10,8 @@ class Styles{
         secondary: isDark?Colors.deepPurple.shade400.withOpacity(0.8): Colors.deepPurple.shade100.withOpacity(0.8),
         brightness: isDark? Brightness.dark :Brightness.light
       ),
-      cardColor: isDark? Colors.grey: Colors.white,
-      canvasColor: isDark? Colors.grey.shade500: Colors.white70,
+      cardColor: isDark? Colors.white: Colors.grey,
+      canvasColor: isDark? Colors.grey.shade500: Colors.grey.shade300,
       buttonTheme: Theme.of(context).buttonTheme.copyWith(
         colorScheme: isDark? ColorScheme.dark():ColorScheme.light()
       )

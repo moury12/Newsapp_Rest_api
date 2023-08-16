@@ -48,22 +48,18 @@ dependencies:
   webview_flutter: ^3.0.4
   http: ^0.13.4
   intl: ^0.18.1
+  share_plus: ^6.3.3
+  url_launcher: ^6.0.10
   reading_time: ^2.0.0
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  icons_launcher: ^1.1.8
 
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+flutter_icons:
+    android: true
+    ios: true
+    image_path: "assets/app_icon.png"
+    adaptive_icon_background: #ebcef9
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-
-# The following section is specific to Flutter packages.
 flutter:
 
   # The following line ensures that the Material Icons font is

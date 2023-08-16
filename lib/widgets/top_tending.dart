@@ -19,7 +19,7 @@ class TopTrendingWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Material(
-        color: Theme.of(context).cardColor,
+        color: Theme.of(context).canvasColor,
         borderRadius: BorderRadius.circular(12.0),
         child: InkWell(
           onTap: () {},
